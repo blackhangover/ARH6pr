@@ -1,0 +1,20 @@
+type book{
+    id:ID!,
+    name: String,
+    genre: String,
+    fio: String
+    library: library!
+}
+type library{
+    id:ID!,
+    name:String,
+    bookList:[book]!
+}
+type Query{
+    books:[book],
+    book(id:ID): book
+}
+
+type Mutation{
+    createBook(name:String!, genre:String!,fio:String!):book
+}
